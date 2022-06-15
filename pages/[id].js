@@ -30,7 +30,7 @@ function PostPage({ trendingResults, followResults, providers }) {
   const router = useRouter();
   const { id } = router.query;
 
-  if (!session) return <Login providers={providers} />;
+ 
 
   useEffect(
     () =>
@@ -51,6 +51,8 @@ function PostPage({ trendingResults, followResults, providers }) {
       ),
     [db, id]
   );
+
+  if (!session) return <Login providers={providers} />;
 
   return (
     <div>
